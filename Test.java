@@ -16,6 +16,9 @@ class Test{  // titlecase
 		}
 		System.out.println("\u090B\u0937\u093F");
 		// System system = new System();  --> error
+
+		//java Test 10 20 30 40 50
+
 	}
 
 }

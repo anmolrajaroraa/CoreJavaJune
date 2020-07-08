@@ -1,3 +1,4 @@
+package questions;
 public class Solution1 {
 	
 //	public static char findFirstNonRepeatingCharacter(String s) {

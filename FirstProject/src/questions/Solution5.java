@@ -1,6 +1,8 @@
+package questions;
+
 import java.util.HashMap;
 
-public class DictionaryDemo {
+public class Solution5 {
 	
 	public static char findFirstNonRepeatingCharacter(String s) {
 		
@@ -31,31 +33,11 @@ public class DictionaryDemo {
 	}
 
 	public static void main(String[] args) {
-		
-//		HashMap<String, Integer> phonebook = new HashMap<>();
-//		phonebook.put("Ram", 123456890);
-//		phonebook.put("Shyam", 123456789);
-//		phonebook.put("Ram", 9999999);
-//		
-//		System.out.println("Ram's contact no is " + phonebook.get("Ram"));
-//		System.out.println("Shyam's contact no is " + phonebook.get("Shyam"));
 
-		String s = "ahhffsdfgghhfdas";
+		String s = "afghjkl";
 		
 		System.out.println(findFirstNonRepeatingCharacter(s));
-		
-//		Employee employee = new Employee();
 		
 	}
 
 }
-
-//HashMap<Character, Integer>
-//{
-//	'a': 3,
-//	'b': 1,
-//	'c': 3,
-//	'd': 1,
-//	'e': 3,
-//	'f': 1
-//}
