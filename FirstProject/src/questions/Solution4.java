@@ -42,6 +42,8 @@ public class Solution4 {
 		
 		for(int element : arr) {
 			System.out.print(element + ", ");
+			//statement 2
+			//statement 3
 		}
 		
 	}

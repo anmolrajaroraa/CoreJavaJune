@@ -40,7 +40,7 @@ public class Solution1 {
 //		return '_';
 //	}
 	
-	public static char findFirstNonRepeatingCharacter(String s) {
+	public static char findFirstRepeatingCharacter(String s) {
 		
 		int characterCount[] = new int[26];
 		
@@ -58,7 +58,7 @@ public class Solution1 {
 			char c = s.charAt(i);
 			int asciiCode = c;
 			int index = asciiCode - 97;
-			if(characterCount[index] == 1) {
+			if(characterCount[index] > 1) {
 				return c;
 			}
 			
@@ -101,11 +101,33 @@ public class Solution1 {
 //		char c = 37;
 //		System.out.println(c);
 		
-		char result = findFirstNonRepeatingCharacter(s);
+		char result = findFirstRepeatingCharacter(s);
 		System.out.println(result);
 		
 		
+		char element = ' ';
+		
+		ram:
+		for(int i = 0; i < s.length(); i++) {
 
+			element = s.charAt(i);
+			
+			for(int j = 0; j < s.length(); j++) {
+				if( i != j && s.charAt(j) == element) {
+
+					break ram;
+					
+				}
+			}
+			
+//			if(isDuplicateFound == false) {
+//				break;
+//			}
+			
+		}
+		
+		System.out.println("Element is " + element);
+		
 	}
 
 }
