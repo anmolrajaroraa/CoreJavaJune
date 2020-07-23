@@ -3,7 +3,15 @@ package questions;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Solution6 {
+import oops.Dad;
+
+public class Solution6 extends Dad{
+	
+	String abc = propertyValue;
+	void useDadCar() {
+		luxuryCar();
+		getDonation();
+	}
 
 	static String findOppositeSeat(int seatNo) {
 		HashMap<Integer, Integer> seats = new HashMap<>();
@@ -44,6 +52,11 @@ public class Solution6 {
 		
 		scanner.close();
 		
+		Dad dad = new Dad();
+		dad.getDonation();
+//		String abc = dad.propertyValue;
+		
+//		E obj = new E();
 	}
 
 }

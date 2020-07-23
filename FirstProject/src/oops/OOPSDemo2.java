@@ -2,6 +2,9 @@ package oops;
 
 import java.util.ArrayList;
 
+// Is-A -> SavingsAccount is a Account (inheritance)
+// Has-A -> Student has a Address, has a subject (aggregation) 
+
 class Student2{
 	private short id;   
 	private String name;  
@@ -88,6 +91,10 @@ public class OOPSDemo2 {
 		student.getSubjects().add(subject);
 		
 		System.out.println(student);
+		
+		Dad dad = new Dad();
+		dad.luxuryCar();
+		String abc = dad.propertyValue;
 		
 	}
 
