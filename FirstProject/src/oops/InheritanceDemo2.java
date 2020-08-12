@@ -35,6 +35,18 @@ abstract class Account extends Object{
 		System.out.println("Account withdraw...");
 		System.out.println("Verify pin...");
 	}
+	
+//	final abstract void abc();
+	
+	void limit(int limit) {
+		System.out.println("Limit is " + limit);
+	}
+	
+	final void KYC() {
+		System.out.println("Know your customer properly...");
+	}
+	
+	abstract void ROI();
 
 	@Override
 	public String toString() {
@@ -47,40 +59,84 @@ abstract class Account extends Object{
 class SavingsAccount extends Account{
 	
 	public SavingsAccount(int accountNo, String customerName, int balance) {
-		super(accountNo, customerName, balance);  // this line is always present here (but hidden from us)
+//		super();     // this line is always present here (but hidden from us)
+		super(accountNo, customerName, balance);  
 		System.out.println("I am child cons");
 //		this.accountNo = accountNo;
 //		this.customerName = customerName;
 //		this.balance = balance;
 	}
 	
+	@Override
 	void ROI() {
 		System.out.println("3% ROI will be given");
 	}
-	void limit() {
-		System.out.println("Limit exceeded...");
+	@Override
+	void limit(int limit) {
+		System.out.println("Savings limit is " + limit);
 	}
 	void showPAN() {
 		System.out.println("Show PAN card please...");
 	}
+	
+//	@Override
+//	void KYC() {
+//		System.out.println("Know your customer");
+//	}
 }
 
 class CurrentAccount extends Account{
 	public CurrentAccount(int accountNo, String customerName) {
 		super(accountNo, customerName);
 	}
+	
+	@Override
 	void ROI() {
-		System.out.println("8% ROI will be given");
+		System.out.println("8% ROI will be taken");
+	}
+	void limit() {
+		System.out.println("No limit");
+	}
+	void KYC(int documents) {
+		System.out.println("Know your customer and ask for " + documents + " documents");
 	}
 }
 //
-//class DematAccount extends Account{
-//	
-//}
+class DematAccount extends Account{
+	public DematAccount(int accountNo, String customerName) {
+		super(accountNo, customerName);
+	}
+
+	@Override
+	void ROI() {
+		System.out.println("Some interest will be taken");
+	}
+	void ROI(int interest) {
+		System.out.println(interest + " % will be taken");
+	}
+}
 
 class Customer{
 	SavingsAccount sa;
-//	CurrentAccount ca;
+	CurrentAccount ca;
+}
+
+final class MathOperations {
+	void add() {
+		System.out.println();
+	}
+	void subtract() {
+		
+	}
+	void multiply() {
+		
+	}
+	void divide() {
+		
+	}
+	void sqrt() {
+		
+	}
 }
 
 public class InheritanceDemo2 {
@@ -95,12 +151,18 @@ public class InheritanceDemo2 {
 		sa.ROI();
 		sa.deposit();
 		sa.withdraw();
+		sa.limit(10000);
+		sa.KYC();
 //		sa.limit();
 //		sa.ROI();
 //		sa.showPAN();
 //		
 		CurrentAccount ca = new CurrentAccount(102, "Shyam Kumar");
 		ca.ROI();
+		ca.limit();
+		ca.limit(100000);
+		ca.KYC(5);
+		ca.KYC();
 //		ca.deposit();
 //		ca.withdraw();
 //		ca.ROI();
@@ -120,6 +182,17 @@ public class InheritanceDemo2 {
 //		
 //		all private cons doesnt mean that your class is equivalent to abstract class
 //		coz it will break the inheritance coz child class cons depend on super() when objects are created
+		
+		// abstract fns - fns without body - used for enforcing child classes to implement this particular  method acc to them 
+		
+		// final - constant variable, stop overriding, stop inheritance
+		// overriding - signature should be same
+		// if you create a fn with same name as parent fn but signature is different then it is overloading
+		
+//		final vs abstract vs private cons
+//		final -> no inheritance, object can be created
+//		abstract -> inheritance can be done, object can't be created
+//		private cons -> inheritance blocked, object can't be created
 	}
 
 }
