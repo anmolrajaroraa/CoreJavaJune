@@ -69,6 +69,9 @@ class Square extends Shape{
 	void perimeter() {
 		System.out.println("Perimeter using 4 * s");
 	}
+	void customMethod() {
+		
+	}
 }
 
 public class UpcastDowncast {
@@ -87,6 +90,10 @@ public class UpcastDowncast {
 		else if(shape instanceof Rectangle) {
 			Rectangle rectangle = (Rectangle) shape;
 			rectangle.calculateDiagnol();
+		}
+		else if(shape instanceof Square) {
+			Square square = (Square) shape;
+			square.customMethod();
 		}
 	}
 
