@@ -1,59 +1,58 @@
 package oops;
 
-interface Test{
-	public abstract void doSomething();
-}
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-class TestChild implements Test, Runnable{
-
-	@Override
-	public void doSomething() {
-		
-	}
+class DoSomething implements Runnable{
 
 	@Override
 	public void run() {
-		
+		System.out.println("Long method...");
 	}
 	
 }
 
-public class MyClass {
-
+public class MyClass{
 	public static void main(String[] args) {
-		Test test = new TestChild();
-		Runnable runnable = new TestChild();
+		Runnable runnable = new DoSomething();
+		Thread thread = new Thread(runnable);
 		
-		Test test2 = new Test() {
+		Runnable runnable2 = new Runnable() {
 			
-			@Override
-			public void doSomething() {
-				
-			}
-		};
-		
-		new Runnable() {
-			
-			@Override
-			public void run() {
-				System.out.println("Some anonymous class");
-			}
-		};
-		
-		Thread thread = new Thread(new Runnable() {
-
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
 				
 			}
+		};
+		Thread thread2 = new Thread(runnable2);
+		
+		Thread thread3 = new Thread(new Runnable() {
 			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
+			}
 		});
+		
+		Thread thread4 = new Thread(()->{
+			System.out.println("I am lambda expression...");
+		});
+		
+		new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		};
+		
+		// lambda expression can only be applied to SAM interfaces (functional interfaces)
+		// SAM - Single Abstract Method
 	}
-
 }
-
-
 
 //1. Create an interface
 //2. Create a class that implements the interface

@@ -11,6 +11,10 @@ class EmployeeDetails{
 
 class EmployeeDetailsPlus extends EmployeeDetails{
 	int incentives;
+	
+	void run() {
+		
+	}
 }
 
 class AA{
@@ -45,6 +49,8 @@ public class IsADemo2 {
 		BB obj = new BB();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println();
+		
+		obj.getDetails().run();
 	}
 
 }

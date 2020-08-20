@@ -148,6 +148,10 @@ public class UpcastDowncast {
 		Rectangle rectangle = (Rectangle)shape2;
 		System.out.println(rectangle.count);
 		rectangle.calculateDiagnol();*/
+		
+		Circle circle = new Circle();
+		Shape shape = circle; // upcast
+		Circle circle2 = (Circle) shape;  // downcast
 	}
 
 }
