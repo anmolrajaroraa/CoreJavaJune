@@ -33,6 +33,9 @@ interface HybridPlayer extends Player, StarPlayer{
 		System.out.println(Player.MAX_POWER);
 		System.out.println(StarPlayer.MAX_POWER);
 	}
+	default public void throwFire() {
+		System.out.println("I can throw fire!!");
+	}
 }
 
 class Bison implements Player, StarPlayer{
@@ -74,10 +77,20 @@ class Bison implements Player, StarPlayer{
 		// TODO Auto-generated method stub
 		
 	}
+	void createBison(){
+//		attack();
+//		defense();
+		entry();
+//		kick();
+//		punch();
+		startPower();
+//		hide();
+//		fly();
+	}
 	
 }
 
-class Dhalsim implements Player{
+class Dhalsim implements HybridPlayer{
 	
 	int power;
 
@@ -101,6 +114,18 @@ class Dhalsim implements Player{
 
 	@Override
 	public void defense() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void hide() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fly() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -140,8 +165,31 @@ class Ryu implements Player{
 public class InterfaceDemo3 {
 
 	public static void main(String[] args) {
-		Bison bison = new Bison();
-		bison.getClass().getSimpleName();
+//		Bison bison = new Bison();
+//		bison.getClass().getSimpleName();
+		
+		Ryu ryu = new Ryu();  // implements Player
+		ryu.attack();
+		ryu.defense();
+		ryu.entry();
+		ryu.kick();
+		ryu.punch();
+		ryu.startPower();
+		
+		Bison bison = new Bison(); // implements Player, StarPlayer
+		
+		
+		Dhalsim dhalsim = new Dhalsim();  // implements HybridPlayer
+		dhalsim.attack();
+		dhalsim.defense();
+		dhalsim.entry();
+		dhalsim.kick();
+		dhalsim.punch();
+		dhalsim.startPower();
+		dhalsim.hide();
+		dhalsim.fly();
+		dhalsim.testHybridPlayer();
+		dhalsim.throwFire();
 	}
 
 }
